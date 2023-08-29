@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Thêm các liên kết tới Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="icon" href="bia1.jpg">
+  <title>M-ilk</title>
+  <style>
+    .login-form {
+      width: 100%; /* Sửa lại chiều rộng thành 100% */
+      max-width: 350px; /* Giới hạn chiều rộng tối đa */
+      margin: 0 auto;
+      margin-top: 100px;
+      border: 1px solid gray;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: white;
+      box-shadow: #000;
+      float: right;
+    }
+    /* ... Thêm các CSS hiện có ... */
+    /* ... */
+    @media (max-width: 576px) {
+      .login-form {
+        margin-top: 20px; /* Điều chỉnh khoảng cách trên điện thoại nhỏ */
+      }
+    }
+    body {
+      background-image: url(nen.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .form-control {
+      background-color: #f1f1f1;
+    }
+    p{
+        color:pink;
+        font-weight: bold;
+    }
+    .error-message {
+      color: red;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+        /* CSS cho pop-up */
+        .popup {
+            position:fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+        }
+
+        .popup-content {
+            background-color: #f1f1f1;
+            padding: 20px;
+            max-width: 400px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .popup-header {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .popup-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .popup-close {
+            cursor: pointer;
+            font-size: 18px;
+            color: #888;
+        }
+
+        .popup-close:hover {
+            color: #555;
+        }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="login-form">
+      <img style="width: 95%;" src="bia1.jpg" alt="">
+      <p class="text-center">CÁNH CỬA TÌNH YÊU</p>
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="password">MÃ PIN</label>
+          <input type="password" class="form-control" id="password" placeholder="Nhập mã PIN" required>
+          <div id="password-error" class="error-message"></div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" style="background-color: palevioletred;color:#000">Đăng Nhập</button>
+      </form>
+    </div>
+  </div>
+  <div class="popup" id="popup">
+    <div class="popup-content">
+        <div class="popup-header">LOVE 😻😽</div>
+        <div class="popup-text"><img src="khung.jpg" alt="" style="height: 300px;width: 350px;border-radius: 0.3rem;"><br><strong></strong></div>
+        <div class="popup-close" onclick="closePopup()" style="font-family:'Courier New', Courier, monospace;">Close</div>
+    </div>
+</div>
+
+  <!-- Thêm liên kết tới Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault(); // Prevent form submission
+
+      // Get input values
+      var password = document.getElementById('password').value;
+
+      // Perform validation
+      if ( password === '1130307603') {
+        // Redirect to index.html if the credentials are correct
+        window.location.href = 'landing.html';
+      } else {
+        alert('❌Bạn Không Phải Là M-ilk Của Chúng Tôi. Lượt Truy Cập Đã Vi Phạm Bảo Mật Của Chúng Tôi.');
+        alert('Hệ Thống Sẽ Ghi Nhận Lại. Vui Lòng Thử Lại Nhé ☑️');
+      }
+    });
+
+    function closePopup() {
+      var popup = document.getElementById("popup");
+      popup.style.display = "none";
+  }
+  
+  document.addEventListener("DOMContentLoaded", function(event) {
+      var popup = document.getElementById("popup");
+      setTimeout(function() {
+          popup.style.display = "flex";
+      }, 1000);
+  });
+  </script>
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</body>
+</html>
